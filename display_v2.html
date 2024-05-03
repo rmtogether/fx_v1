@@ -1,0 +1,31 @@
+<html>
+<head>
+    <!-- Prevent caching of the page -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+</head>
+<body>
+    <div style="display: flex; justify-content: space-between;">
+        <img src="1st_plot.jpeg" style="width: 50%;">
+        <img src="2nd_plot.jpeg" style="width: 50%;">
+    </div>
+    <div id="timer">Refresh in 60 seconds</div>
+
+    <script>
+        var seconds = 60; // Seconds until refresh
+        var countdown = document.getElementById('timer');
+
+        function updateCountdown() {
+            seconds--;
+            countdown.innerHTML = 'Refresh in ' + seconds + ' seconds';
+            if(seconds <= 0) {
+                window.location.reload(); // Reload the page
+            }
+        }
+
+        // Update the countdown every 1 second
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
